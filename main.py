@@ -1,6 +1,10 @@
 import random
 import json
 
+# Python Password Generator made by zzixM
+# instagram handle: @zzixm_
+# github handle: https://github.com/zzixM
+
 def passwordGen():
     uppercaseLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
     lowercaseLetters = uppercaseLetters.lower()
