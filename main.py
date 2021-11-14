@@ -82,20 +82,46 @@ def passwordGen():
 
         passwords["passwords"].append({choicNum : password})
 
+    validUserChoice = False
+    while validUserChoice == False:
+        userChoice = input(str("\nWARNING: Do you want to save the generated passwords to a file?\nNote: the passwords will be saved in plain text. "))
+        userChoice.lower()
+
+        if userChoice == "yes":
+            savePasswords(passwords)
+            validUserChoice = True
     
-    print(passwords)
+        elif userChoice == "no":
+            startMenu()
+            validUserChoice = True
     
-    savePasswords(passwords)
+        else:
+            print("\nplease answer yes or no.\n")
 
 
 def getPasswords():
     pass
 
 def savePasswords(passwords):
-    print("before")
+
+    validUserChoice = False
+    while validUserChoice == False:
+        userChoice = input(str("\nWARNING: You are about to save the generated passwords to a file. Are you sure?\nNote: the passwords will be saved in plain text. "))
+        userChoice.lower()
+
+        if userChoice == "yes":
+            validUserChoice = True
+    
+        elif userChoice == "no":
+            startMenu()
+            validUserChoice = True
+    
+        else:
+            print("\nplease answer yes or no.\n")
+    
     with open ('passwords.json', 'w') as saveFile:
         json.dump(passwords, saveFile, indent = 4)
-        print("saved")
+        print("Passwords saved")
         saveFile.close()
 
 def startMenu():
