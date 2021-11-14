@@ -70,18 +70,28 @@ def passwordGen():
     print(f"\nGenerating \"{amount}\" passwords.\n")
     choicNum = 1
     
+    passwords = {
+
+    }
+    passwords["passwords"] = []
+
     for x in range(amount):
         password = "".join(random.sample(all, length))
         print(f"Password {choicNum} = {password}")
         choicNum = choicNum + 1 
-    print("\nReturning to start menu.\n")
 
-    startMenu()
+        passwords["passwords"].append({choicNum : password})
+
+    
+    print(passwords)
+    
+    #savePasswords(passwords)
+
 
 def getPasswords():
     pass
 
-def savePasswords():
+def savePasswords(passwords):
     pass
 
 def startMenu():
