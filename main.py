@@ -68,7 +68,7 @@ def passwordGen():
 
     print(f"\nGenerating password of length \"{length}\".")
     print(f"\nGenerating \"{amount}\" passwords.\n")
-    choicNum = 1
+    choicNum = 0
     
     passwords = {
 
@@ -85,14 +85,18 @@ def passwordGen():
     
     print(passwords)
     
-    #savePasswords(passwords)
+    savePasswords(passwords)
 
 
 def getPasswords():
     pass
 
 def savePasswords(passwords):
-    pass
+    print("before")
+    with open ('passwords.json', 'w') as saveFile:
+        json.dump(passwords, saveFile, indent = 4)
+        print("saved")
+        saveFile.close()
 
 def startMenu():
     
