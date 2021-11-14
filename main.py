@@ -8,7 +8,7 @@ import json
 def passwordGen():
     uppercaseLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
     lowercaseLetters = uppercaseLetters.lower()
-    didgits = "123456789"
+    didgits = "0123456789"
     specialChrs =  "!?_#@:;\\/*."
 
     upper, lower, nums, special = True, True, True, True
