@@ -14,7 +14,6 @@ def passwordGen():
     upper, lower, nums, special = True, True, True, True
 
     all = ""
-
     if upper:
         all += uppercaseLetters
     if lower:
@@ -25,9 +24,7 @@ def passwordGen():
         all += specialChrs
 
     validLength = False
-
     while validLength == False:
-
         length = input(str("How long do you want the password to be? "))
 
         try:
@@ -46,9 +43,7 @@ def passwordGen():
     
 
     validAmount = False
-
     while validAmount == False:
-
         amount = input(str("How many passwords do you want? "))
 
         try:
@@ -65,13 +60,12 @@ def passwordGen():
         except ValueError as e:
             print("Please enter an number between 2 and 20\n")
     
-
     print(f"\nGenerating password of length \"{length}\".")
     print(f"\nGenerating \"{amount}\" passwords.\n")
-    choicNum = 0
-    
-    passwords = {
 
+    choicNum = 0  
+    passwords = {
+        
     }
     passwords["passwords"] = []
 
