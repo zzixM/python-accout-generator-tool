@@ -1,5 +1,6 @@
 import random
 import json
+import time
 
 # Python Password Generator made by zzixM
 # instagram handle: @zzixm_
@@ -94,7 +95,11 @@ def passwordGen():
 
 
 def getPasswords():
-    pass
+    
+    with open('passwords.json', 'r') as readFile:
+        usersPasswords = json.load(readFile)
+        print(usersPasswords)
+        readFile.close()
 
 def savePasswords(passwords):
 
@@ -117,15 +122,22 @@ def savePasswords(passwords):
         json.dump(passwords, saveFile, indent = 4)
         print("Passwords saved")
         saveFile.close()
+    
+    startMenu()
 
 def startMenu():
     
-    userChoice = input(str("Would you like to: \n1. Generate a Password \n2. Exit\n> "))
+    print("")
+    print("Welcome to zzixMs password generator\n")
+    userChoice = input(str("Would you like to: \n1. Generate a Passwords \n2. Read Passwords\n3. Exit\n> "))
 
     if userChoice == "1":
         passwordGen()
     
     elif userChoice == "2":
+        getPasswords()
+    
+    elif userChoice == "3":
         exit()
     
     else:
