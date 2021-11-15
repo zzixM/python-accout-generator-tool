@@ -94,11 +94,15 @@ def passwordGen():
 
 
 def getPasswords():
+
+    print("\nYour Usernames Are:\n")
     
     with open('passwords.json', 'r') as readFile:
         usersPasswords = json.load(readFile)
         print(usersPasswords)
         readFile.close()
+    
+    startMenu()
 
 def savePasswords(passwords):
 
@@ -235,6 +239,17 @@ def saveUsernames(usernames):
     
     startMenu()
 
+def getUsernames():
+
+    print("\nYour Passwords Are:\n")
+    
+    with open('usernames.json', 'r') as readFile:
+        usersUsernames = json.load(readFile)
+        print(usersUsernames, "\n")
+        readFile.close()
+    
+    startMenu()
+
 def credits():
     print("\nPython Account Tool made by zzixM")
     print("Instagram handle: @zzixm_")
@@ -257,8 +272,7 @@ def startMenu():
         usernameGen()
 
     elif userChoice == "4":
-        print("\nWorking progress")
-        startMenu()
+        getUsernames()
 
     elif userChoice == "5":
         credits()
