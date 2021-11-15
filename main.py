@@ -1,6 +1,5 @@
 import random
 import json
-import time
 
 # Python Account Tool made by zzixM
 # instagram handle: @zzixm_
